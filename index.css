@@ -4,7 +4,20 @@
 }
 
 body {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('./img/bg.jpg');
+    background-size: cover !important;
+    background-repeat: no-repeat;
 }
 
 #bingdd {
@@ -67,7 +80,10 @@ body {
     transform-origin: 172px 39px;
     transform: rotate(-55deg);
     border-radius: 50% 30% 50px 50px;
-    animation: 2s ease-in-out 1.1s infinite lRotate;
+}
+
+.arm_l_anim {
+    animation: 2s ease-in-out .1s lRotate;
 }
 
 @keyframes lRotate {
@@ -99,7 +115,10 @@ body {
     transform: rotate(-58deg);
     border-radius: 80% 50px 80px 80%;
     transform-origin: 0 39px;
-    animation: 2s ease-in-out 1s infinite rRotate;
+}
+
+.arm_r_anim {
+    animation: 2s ease-in-out 0s rRotate;
 }
 
 @keyframes rRotate {
@@ -252,6 +271,26 @@ body {
     left: 24px;
     top: 80px;
     transform: rotate(-45deg);
+}
+
+#eye_center_l {
+    position: absolute;
+    z-index: 100;
+    left: 176px;
+    top: 162px;
+    /* width: 2px;
+    height: 2px;
+    background-color: red; */
+}
+
+#eye_center_r {
+    position: absolute;
+    z-index: 100;
+    left: 330px;
+    top: 162px;
+    /* width: 2px;
+    height: 2px;
+    background-color: red; */
 }
 
 .eye_r {

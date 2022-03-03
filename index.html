@@ -1,28 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" name="viewport">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover"
+        name="viewport">
     <link rel="stylesheet" href="./index.css">
     <title>冰墩墩</title>
+    <style>
+        :root {
+            --shell-offset: 5;
+            --inter-offset: 0;
+        }
+
+        .shell {
+            width: calc(var(--shell-offset) * 1% + 100%);
+            height: calc(var(--shell-offset) * 1% + 100%);
+            border-radius: inherit;
+            transform: translate(calc(var(--shell-offset) * 1% * .5 * -1), calc(var(--shell-offset) * 1% * .5 * -1));
+            border: 1px solid black;
+            filter: blur(.5px);
+        }
+
+        .virtual {
+            filter: blur(1px);
+        }
+
+        #inter_area {
+            /* border: 2px solid red; */
+            position: relative;
+            z-index: 999;
+            width: calc(var(--inter-offset) * 1% + 100%);
+            height: calc(var(--inter-offset) * 1% + 100%);
+            transform: translate(calc(var(--inter-offset) * 1% * .5 * -1), calc(var(--inter-offset) * 1% * .5 * -1));
+        }
+    </style>
 </head>
+
 <body>
+    <div id="bg"></div>
     <div class="wrapper" id="bingdd">
-        <div class="body">
+        <div class="body virtual">
+            <div class="shell"></div>
             <img id="logo" src="./img/logo.png" alt="BEIJING 2022">
         </div>
-        <div class="ear ear_l"></div>
-        <div class="ear ear_r"></div>
-        <div class="arm arm_l"></div>
-        <div class="arm arm_r">
+        <div class="ear ear_l virtual">
+            <div class="shell"></div>
+        </div>
+        <div class="ear ear_r virtual">
+            <div class="shell"></div>
+        </div>
+        <div class="arm arm_l virtual">
+            <div class="shell"></div>
+        </div>
+        <div class="arm arm_r virtual">
+            <div class="shell"></div>
             <div class="heart">
                 <div class="heart_l"></div>
                 <div class="heart_r"></div>
             </div>
         </div>
-        <div class="leg leg_l"></div>
-        <div class="leg leg_r"></div>
+        <div class="leg leg_l virtual">
+            <div class="shell"></div>
+        </div>
+        <div class="leg leg_r virtual">
+            <div class="shell"></div>
+        </div>
+        <div id="eye_center_l"></div>
+        <div id="eye_center_r"></div>
         <div class="face">
             <div class="line line1"></div>
             <div class="line line2"></div>
@@ -30,14 +76,14 @@
             <div class="line line4"></div>
             <div class="eye eye_l">
                 <div class="eye-c1">
-                    <div class="eye-c2">
+                    <div class="eye-c2" id="eyeball_l">
                         <div class="eye-c3"></div>
                     </div>
                 </div>
             </div>
             <div class="eye eye_r">
                 <div class="eye-c1">
-                    <div class="eye-c2">
+                    <div class="eye-c2" id="eyeball_r">
                         <div class="eye-c3"></div>
                     </div>
                 </div>
@@ -49,6 +95,7 @@
             <div class="mouth"></div>
             <div class="mouth-c"></div>
         </div>
+        <div id="inter_area"></div>
     </div>
     <script>
         const wWidth = window.innerWidth;
@@ -57,5 +104,7 @@
             bdd.style.zoom = `${wWidth / 666}`;
         }
     </script>
+    <script src="./js/inter.js"></script>
 </body>
+
 </html>
