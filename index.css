@@ -322,8 +322,6 @@ body {
     top: 160px;
     left: 151px;
     z-index: 3;
-    /* 设置border-bottom在ios手机上边也会有一点点边框颜色 */
-    /* border-bottom: 3px solid #0F0F10; */
     box-shadow: 0 2px #0F0F10;
     border-radius: 100%;
     background-color: #fff;
