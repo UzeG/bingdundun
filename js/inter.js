@@ -1,4 +1,4 @@
-const eyeball_l = document.querySelector('#eyeball_l');
+/* const eyeball_l = document.querySelector('#eyeball_l');
 const eyeball_r = document.querySelector('#eyeball_r');
 const inter_area = document.querySelector('#inter_area');
 const eye_center_l = document.querySelector('#eye_center_l');
@@ -22,7 +22,7 @@ inter_area.addEventListener('mousemove', e => {
 
     // eyeball_r.style.left = offsetRadius * Math.cos(Math.atan((center_r_top - e.offsetY) / (center_r_left - e.offsetX))) + 'px';
     eyeball_r.style.top = offsetRadius * Math.sin(-135 / 360 + Math.atan(Math.abs((center_r_top - e.offsetY) / -(center_r_left - e.offsetX)))) + 'px';
-})
+}) */
 
 
 const arm_l = document.querySelector('.arm_l');
