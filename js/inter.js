@@ -15,7 +15,7 @@ const center_r_top = eye_center_r.offsetTop;
 // console.log('center_r_left@', center_r_left);
 // console.log('center_r_top@', center_r_top);
 inter_area.addEventListener('mousemove', e => {
-    console.log(`(${e.offsetX}, ${e.offsetY})`);
+    // console.log(`(${e.offsetX}, ${e.offsetY})`);
 
     // eyeball_l.style.left = offsetRadius * Math.cos(Math.atan(Math.abs((center_l_top - e.offsetY) / (center_l_left - e.offsetX)))) + 'px';
     eyeball_l.style.top = offsetRadius * Math.sin(-45 / 360 + Math.atan(Math.abs((center_l_top - e.offsetY) / (center_l_left - e.offsetX)))) + 'px';
